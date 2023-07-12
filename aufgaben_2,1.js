@@ -1,17 +1,18 @@
-/*
-let x = function(){
+
+// 2.1
+let f = function(){
     console.log("Anonyme Funktion mit einer Variablen");
+
 }
 
-
-
-function f2(y){
-    y();
+function f2(){
+f();
 }
 
-f2(x);
-*/
+f2();
 
-f2 ( function() { console.log("Anynome Funktion ohne Variable"); });
+
+
+
 
 

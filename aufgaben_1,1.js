@@ -9,3 +9,5 @@ function f2(y){
 }
 
 f2(f1);
+
+/* Funktion einer Variablen zuweisen unnötig!!!!!! */
