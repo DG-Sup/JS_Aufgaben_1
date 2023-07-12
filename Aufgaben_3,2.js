@@ -11,38 +11,28 @@ Deine Funktion soll dann entsprechend „Summe ist positiv und lautet 12" oder "
 
 */
 
-function f1 (a, b, f) {
-    return f(a, b);
+function f1 (a, f) {
+    return f(a);
 }
-// Summe zurückgeben
-console.log(f1(10, 5, (z1, z2) => z1 + z2));
 
-// Summe als Block ausgeben
-console.log(f1(20, 5, (z1, z2) => {
-    return z1+z2;
-}));
-
-// Summe als JSON
-console.log(f1(30, 5, (z1, z2) => ({
-    summe: z1 + z2,
-    produkt: z1 * z2,
-    differenz: z1 - z2,
-    differenz2: z1 < z2 ? z2 - z1 : z1 -z2
-    })));
-    
-
-
-console.log(f1(5, 40, (z1, z2) => {
-    if (z1 < z2){
-        var d = z2 - z1;
-    }
+let a = f1([10, 5, 8, 24, 9, 35, -100], (z1) => {
+   let s = z1.reduce( (a,b) => a + b)
+    if(s<0){
+        return {
+            Negativ: s
+        }
+    }    
     else{
-        var d = z1 - z2;
+        return {
+            Positiv: s
+        }
     }
-    return {
-        summe: z1 + z2,
-        produkt: z1 * z2,
-        differenz: d
-    }
-}));
+}
+)
 
+if(a.Positiv != undefined){
+    console.log(`Die Summe ist positiv ${a.Positiv}`);
+}
+else{
+    console.log(`Die Summe ist negativ ${a.Negativ}`);
+}
